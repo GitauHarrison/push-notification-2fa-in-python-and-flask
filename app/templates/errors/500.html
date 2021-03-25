@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+        <div class="row text-center">            
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                <!-- title -->
+                <h1>Unexpected Internal Error</h1>
+            </div>        
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p>
+                    There has been an unexpected internal error. The admin has been notified
+                    Sorry for the inconvinience!
+                    Return to the <a href="{{ url_for('home') }}">home page</a>.
+                </p>
+            </div>    
+        </div>                  
+{% endblock %}

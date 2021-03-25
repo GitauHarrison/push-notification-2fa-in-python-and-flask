@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+        <!-- title -->
+        <h1>Push Notifications with Twilio Authy</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+        <p>Hi {{current_user.username}}, do you want to enable push notifications?</p>
+    </div>
+</div>
+{% endblock %}
