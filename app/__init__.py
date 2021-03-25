@@ -10,6 +10,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 mail = Mail()
 login = LoginManager()
+login.login_view = 'auth.login'
 bootstrap = Bootstrap()
 
 
