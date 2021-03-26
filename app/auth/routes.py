@@ -20,7 +20,7 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect(url_for('auth.login'))        
+            return redirect(url_for('auth.login'))
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.home')
@@ -160,7 +160,7 @@ def disable_2fa():
 def check_2fa():
     username = session['username']
     user = User.query.filter_by(username=username).first()
-    session['authy_push_uuid'] = authy.send_push_authenticaion(user)
+    session['authy_push_uuid'] = authy.send_push_authentication(user)
     return render_template('auth/check_2fa.html',
                            next=request.args.get('next')
                            )

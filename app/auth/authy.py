@@ -64,7 +64,7 @@ def get_registration_status(user_id):
     return resp.content['registration']
 
 
-def send_push_authenticaion(user):
+def send_push_authentication(user):
     """Send a push authentication notification to a user.
 
     :param authy_id: the Authy ID for the user
