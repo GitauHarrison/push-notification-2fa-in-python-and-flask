@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+            <h1>Two-Factor Authentication</h1>                                              
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+            <p>Please confirm this log-in attempt on the Authy app on your phone.</p>                                              
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+            <p><img src="{{ url_for('static', filename='images/loading.gif') }}"></p>                                              
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        function check_push() {
+            $.ajax("{{ url_for('auth.check_2fa_poll') }}").done(function(data) {
+                if (data == 'pending') {
+                    setTimeout(check_push, 5000);
+                }
+                else if (data == 'approved') {
+                    window.location = "{{ next }}";
+                }
+                else {
+                    window.location = "{{ url_for('auth.login', next=next) }}";
+                }
+            });
+        }
+
+        setTimeout(check_push, 5000);
+    </script>
+{% endblock %}

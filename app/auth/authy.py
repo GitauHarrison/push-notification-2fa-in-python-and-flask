@@ -2,6 +2,7 @@ import time
 from flask import current_app, request
 import jwt
 import qrcode
+import qrcode.image.svg
 from io import BytesIO
 from authy.api import AuthyApiClient
 
@@ -99,3 +100,15 @@ def check_push_notification_status(uuid):
     if not resp.ok():
         return 'error'
     return resp.content['approval_request']['status']
+
+
+def delete_user(authy_id):
+    """Unregister a user from Authy push notifications.
+
+    :param authy_id: the Authy ID for the user.
+
+    :returns True if successful or False otherwise.
+    """
+    authy_api = AuthyApiClient(current_app.config['AUTHY_PRODUCTION_API_KEY'])
+    resp = authy_api.delete(authy_id)
+    return resp.ok()

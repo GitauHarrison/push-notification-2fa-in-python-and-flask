@@ -15,6 +15,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128), index=True, unique=True)
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    authy_id = db.Column(db.Integer, index=True, unique=True)
 
     def __repr__(self):
         return 'User: {}'.format(self.username)
@@ -43,6 +44,9 @@ class User(UserMixin, db.Model):
         except:
             return
         return User.query.get(id)
+
+    def two_factor_enabled(self):
+        return self.authy_id is not None
 
 
 @login.user_loader

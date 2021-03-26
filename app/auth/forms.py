@@ -43,3 +43,11 @@ class ResetPasswordForm(FlaskForm):
                               )
     token = StringField('Token', validators=[DataRequired()])
     submit = SubmitField('Request Password Reset')
+
+
+class Enable2faForm(FlaskForm):
+    submit = SubmitField('Enable 2FA')
+
+
+class Disable2faForm(FlaskForm):
+    submit = SubmitField('Disable 2FA')
