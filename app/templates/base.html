@@ -70,4 +70,18 @@
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    <!-- Polling implementation -->
+    <script>
+        function check_registration() {
+            $.ajax('/2fa/enable/poll').done(function(data) {
+                if (data == 'pending') {
+                    setTimeout(check_registration, 5000);
+                }
+                else {
+                    window.location = '/home';
+                }
+            });
+        }
+        setTimeout(check_registration, 5000);
+    </script>
 {% endblock %}
