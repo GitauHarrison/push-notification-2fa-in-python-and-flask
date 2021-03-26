@@ -25,13 +25,13 @@
                         {% endif %}
                         
                         <!-- Two factor authentication -->
-                        {% if not user.two_factor_enabled %}
+                        {% if not user.two_factor_enabled() %}
                             <p>
-                                <a href="{{ url_for(auth.enable_2fa) }}">Enable two-factor authenticaton using push notification</a>
+                                <a href="{{ url_for('auth.enable_2fa') }}">Enable two-factor authenticaton using push notification</a>
                             </p>
                         {% else %}
                             <p>
-                                <a href="{{ url_for(auth.disable_2fa) }}">Disable two-factor authenticaton using push notification</a>
+                                <a href="{{ url_for('auth.disable_2fa') }}">Disable two-factor authenticaton using push notification</a>
                             </p>
                         {% endif %}
                     </td>
