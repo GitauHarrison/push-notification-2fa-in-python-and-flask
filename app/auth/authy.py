@@ -19,13 +19,12 @@ def get_authy_registration_jwt(user_id, expires_in=5 * 60):
         'iat': now,
         'exp': now + expires_in,
         'context': {
-            'customer_id': str(user_id),
+            'custom_user_id': str(user_id),
             'authy_app_id': current_app.config['AUTHY_APP_ID'],
         },
     }
     return jwt.encode(payload,
-                      current_app.config['AUTHY_PRODUCTION_API_KEY']
-                      ).decode()
+                      current_app.config['AUTHY_PRODUCTION_API_KEY'])
 
 
 def get_authy_qrcode(jwt):
@@ -110,5 +109,5 @@ def delete_user(authy_id):
     :returns True if successful or False otherwise.
     """
     authy_api = AuthyApiClient(current_app.config['AUTHY_PRODUCTION_API_KEY'])
-    resp = authy_api.delete(authy_id)
+    resp = authy_api.users.delete(authy_id)
     return resp.ok()
