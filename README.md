@@ -129,15 +129,15 @@ Connections                   ttl     opn     rt1     rt5     p50     p9
 
 Note the lines beginning with 'Forwarding'. These show the public URLs that `ngrok` uses to redirect requests into our service. This method provides you with `https://`.
 
-1. Click [Register](https://push-notifications-2fa.herokuapp.com/auth/register) to create a new user
-2. [Log in](https://push-notifications-2fa.herokuapp.com/auth/login?next=%2F) the user
+1. Click _Register_ to create a new user
+2. _Log in_ the user
 3. Go to the _Profile_ page
-4. Click on [Enable two-factor authentication](https://push-notifications-2fa.herokuapp.com/auth/2fa/enable) link
+4. Click on _Enable two-factor authentication_ link
 5. [Download](https://authy.com/download/) the [Authy](https://authy.com/) app
 6. Click the _Enable 2fa_ button and follow the instructions
 7. You have just enabled two-factor authentication for your account!
 8. Click _Logout_ on the top-right of the navbar
-9. [Log in](https://push-notifications-2fa.herokuapp.com/auth/login?next=%2F) the user again
+9. _Log in_ the user again
 10. Check the notification on your [Authy](https://authy.com/) app.
 11. Click _Approve_ or _Deny_
 
