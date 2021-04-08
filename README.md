@@ -149,5 +149,5 @@ If you would like to incorporate this feature, try it out by creating your own p
 
 ### Reference
 
-* This application assumes that you have a basic understanding of python and Flask. If not, start [here](https://gitauharrison-blog.herokuapp.com/personal-blog).
-* If you do not know what the command `mkvirtualenv` is, learn more [here](https://gitauharrison-blog.herokuapp.com/virtualenvwrapper).
+* This application assumes that you have a basic understanding of python and Flask. If not, start [here](https://github.com/GitauHarrison/notes/blob/master/web_development/personal_blog/personal_blog.md).
+* If you do not know what the command `mkvirtualenv` is, learn more [here](https://github.com/GitauHarrison/notes/blob/master/virtualenvwrapper_setup.md).
