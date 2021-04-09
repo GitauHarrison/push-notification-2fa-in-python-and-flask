@@ -24,6 +24,10 @@ Push notifications is another way to enable optional two-factor authentication i
 * Email Validator to validate emails
 * Flask moment for pretty timestamps
 
+### Project  Design
+
+* [Elaborate Push 2FA project design](https://www.figma.com/proto/yup5WjYWXFWS2z2Yrwj84d/Twilio-2fa-Push-Notifcation?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1)
+
 ### Requirements
 * Smartphone
 * [Authy](https://authy.com/) app
