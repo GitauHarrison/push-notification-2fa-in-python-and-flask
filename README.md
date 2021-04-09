@@ -23,6 +23,9 @@ Push notifications is another way to enable optional two-factor authentication i
 * Flask migrate to handle database migrations
 * Email Validator to validate emails
 * Flask moment for pretty timestamps
+* qrcode to generate QR Codes
+* pyjwt for token generation
+* pyngrok for localhost testing
 
 ### Project  Design
 
